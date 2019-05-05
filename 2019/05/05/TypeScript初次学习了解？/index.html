@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      TypeScript初次学习了解？ | 陈玄一 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="陈玄一">
+    
+    
+
+    <meta name="description" content="前言ts我个人的理解是可以把它看做是js的改良版本，因为看到目前很多框架都有提到用ts去写一些底层，很多轮子大神也都说ts是趋势，所以感觉需要学习一下。以下参考官网的上手教程，附链接：TypeScript 安装过程不赘述了，直接看特性 类型注解TypeScript里的类型注解是一种轻量级的为函数或变量添加约束的方式。 1234567function greeter(person: string)">
+<meta name="keywords" content="前端,语言">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TypeScript初次学习了解？ | 陈玄一">
+<meta property="og:url" content="http://yoursite.com/2019/05/05/TypeScript初次学习了解？/index.html">
+<meta property="og:site_name" content="陈玄一">
+<meta property="og:description" content="前言ts我个人的理解是可以把它看做是js的改良版本，因为看到目前很多框架都有提到用ts去写一些底层，很多轮子大神也都说ts是趋势，所以感觉需要学习一下。以下参考官网的上手教程，附链接：TypeScript 安装过程不赘述了，直接看特性 类型注解TypeScript里的类型注解是一种轻量级的为函数或变量添加约束的方式。 1234567function greeter(person: string)">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-05-05T03:24:03.107Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="TypeScript初次学习了解？ | 陈玄一">
+<meta name="twitter:description" content="前言ts我个人的理解是可以把它看做是js的改良版本，因为看到目前很多框架都有提到用ts去写一些底层，很多轮子大神也都说ts是趋势，所以感觉需要学习一下。以下参考官网的上手教程，附链接：TypeScript 安装过程不赘述了，直接看特性 类型注解TypeScript里的类型注解是一种轻量级的为函数或变量添加约束的方式。 1234567function greeter(person: string)">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="images/spm.ico">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">陈玄一</a></h1>
+        <hr class="panel-cover__divider">
+
+        
+        <p class="panel-cover__description">
+          海上烟火，心底微光
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary">
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title class>关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title class>归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">TypeScript初次学习了解？</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2019-05-05" class="post-meta__date date">2019-05-05</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/前端/">前端</a>, <a class="tags-link" href="/tags/语言/">语言</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>ts我个人的理解是可以把它看做是js的改良版本，因为看到目前很多框架都有提到用ts去写一些底层，很多轮子大神也都说ts是趋势，所以感觉需要学习一下。<br>以下参考官网的上手教程，附链接：<a href="https://www.tslang.cn/docs/handbook/typescript-in-5-minutes.html" target="_blank" rel="noopener">TypeScript</a></p>
+<p>安装过程不赘述了，直接看特性</p>
+<h4 id="类型注解"><a href="#类型注解" class="headerlink" title="类型注解"></a><strong>类型注解</strong></h4><p>TypeScript里的类型注解是一种轻量级的为函数或变量添加约束的方式。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function greeter(person: string) &#123;</span><br><span class="line">    return &quot;Hello, &quot; + person;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let user = &quot;Jane User&quot;;</span><br><span class="line"></span><br><span class="line">document.body.innerHTML = greeter(user);</span><br></pre></td></tr></table></figure>
+<p>下面这段代码会报错，原因是ts提供了静态的代码分析，可以分析代码结构和提供的类型注解。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function greeter(person: string) &#123;</span><br><span class="line">    return &quot;Hello, &quot; + person;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let user = [0, 1, 2];</span><br><span class="line"></span><br><span class="line">document.body.innerHTML = greeter(user);</span><br></pre></td></tr></table></figure></p>
+<h4 id="接口"><a href="#接口" class="headerlink" title="接口"></a><strong>接口</strong></h4><p>这里的接口，我的理解是结合上面类型注解看，只要在接口中声明的类型符合，这个对象就可以被接收。</p>
+<h4 id="类"><a href="#类" class="headerlink" title="类"></a><strong>类</strong></h4><p>类结合接口，常规操作，注意点在于可以在类的构造里面用public声明变量<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">class Student &#123;</span><br><span class="line">    fullName: string;</span><br><span class="line">    constructor(public firstName, public middleInitial, public lastName) &#123;</span><br><span class="line">        this.fullName = firstName + &quot; &quot; + middleInitial + &quot; &quot; + lastName;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+  </section>
+
+  <section class="post-comments">
+
+    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+    
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+    
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
