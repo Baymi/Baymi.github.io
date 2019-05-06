@@ -99,14 +99,14 @@
   <meta name="description" content="前言ts我个人的理解是可以把它看做是js的改良版本，因为看到目前很多框架都有提到用ts去写一些底层，很多轮子大神也都说ts是趋势，所以感觉需要学习一下。以下参考官网的上手教程，附链接：TypeScript 安装过程不赘述了，直接看特性 类型注解TypeScript里的类型注解是一种轻量级的为函数或变量添加约束的方式。 1234567function greeter(person: string)">
 <meta name="keywords" content="前端,语言">
 <meta property="og:type" content="article">
-<meta property="og:title" content="TypeScript初次学习了解？">
+<meta property="og:title" content="TypeScript初体验">
 <meta property="og:url" content="http://yoursite.com/2019/05/05/TypeScript初次学习了解？/index.html">
 <meta property="og:site_name" content="陈玄一">
 <meta property="og:description" content="前言ts我个人的理解是可以把它看做是js的改良版本，因为看到目前很多框架都有提到用ts去写一些底层，很多轮子大神也都说ts是趋势，所以感觉需要学习一下。以下参考官网的上手教程，附链接：TypeScript 安装过程不赘述了，直接看特性 类型注解TypeScript里的类型注解是一种轻量级的为函数或变量添加约束的方式。 1234567function greeter(person: string)">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-05T07:11:49.619Z">
+<meta property="og:updated_time" content="2019-05-06T07:33:51.355Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="TypeScript初次学习了解？">
+<meta name="twitter:title" content="TypeScript初体验">
 <meta name="twitter:description" content="前言ts我个人的理解是可以把它看做是js的改良版本，因为看到目前很多框架都有提到用ts去写一些底层，很多轮子大神也都说ts是趋势，所以感觉需要学习一下。以下参考官网的上手教程，附链接：TypeScript 安装过程不赘述了，直接看特性 类型注解TypeScript里的类型注解是一种轻量级的为函数或变量添加约束的方式。 1234567function greeter(person: string)">
 
 
@@ -125,7 +125,7 @@
   };
 </script>
 
-  <title>TypeScript初次学习了解？ | 陈玄一</title>
+  <title>TypeScript初体验 | 陈玄一</title>
   
 
 
@@ -207,7 +207,7 @@
   </div>
 
   <div class="site-nav-toggle">
-    <button aria-label="Toggle navigation bar">
+    <button aria-label="Navigationsleiste an/ausschalten">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -235,7 +235,7 @@
 
     
 
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Startseite</a>
 
   </li>
         
@@ -252,7 +252,7 @@
 
     
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Schlagwörter</a>
 
   </li>
         
@@ -269,7 +269,7 @@
 
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archiv</a>
 
   </li>
 
@@ -338,7 +338,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">TypeScript初次学习了解？
+          <h1 class="post-title" itemprop="name headline">TypeScript初体验
 
               
             
@@ -357,19 +357,31 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
 
               
                 
               
 
-              <time title="Created: 2019-05-05 10:29:40 / Modified: 15:11:49" itemprop="dateCreated datePublished" datetime="2019-05-05T10:29:40+08:00">2019-05-05</time>
+              <time title="Erstellt: 2019-05-05 10:29:40" itemprop="dateCreated datePublished" datetime="2019-05-05T10:29:40+08:00">2019-05-05</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Bearbeitet am</span>
+                
+                <time title="Geändert am: 2019-05-06 15:33:51" itemprop="dateModified" datetime="2019-05-06T15:33:51+08:00">2019-05-06</time>
               
             
           </span>
@@ -378,6 +390,19 @@
 
           
             
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">Kommentare: </span>
+                <a href="/2019/05/05/TypeScript初次学习了解？/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/05/TypeScript初次学习了解？/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -484,6 +509,10 @@
           
 
   
+    <div class="comments" id="comments">
+    </div>
+
+  
 
 
 
@@ -507,10 +536,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
+            Inhaltsverzeichnis
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
+            Übersicht
           </li>
         </ul>
       
@@ -533,7 +562,7 @@
                   <a href="/archives/">
                 
                     <span class="site-state-item-count">7</span>
-                    <span class="site-state-item-name">posts</span>
+                    <span class="site-state-item-name">Artikel</span>
                   </a>
                 </div>
               
@@ -562,7 +591,7 @@
                       
                     
                     <span class="site-state-item-count">7</span>
-                    <span class="site-state-item-name">tags</span>
+                    <span class="site-state-item-name">schlagwörter</span>
                   
                 </div>
               
@@ -632,7 +661,7 @@
 </div>
 
 
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+  <div class="powered-by">Erstellt mit  <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
 
 
 
@@ -640,7 +669,7 @@
 
 
 
-  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.1.1</div>
+  <div class="theme-info">Design – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.1.1</div>
 
 
 
@@ -754,6 +783,36 @@
   
 
   
+  
+
+<script src="//cdn1.lncld.net/static/js/3.11.1/av-min.js"></script>
+
+
+
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+<script>
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'noUJNjRIQeXfETMUSTnfBfcK-gzGzoHsz',
+    appKey: 'WEl6AFhBWvJllOwISRb3Lb0I',
+    placeholder: '(っ•̀ω•́)っ✎⁾⁾ 学习&分享~',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: '' || 'zh-cn'
+  });
+</script>
+
+
 
 
   
