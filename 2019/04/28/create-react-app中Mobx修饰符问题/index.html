@@ -52,10 +52,10 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/spm.ico?v=7.1.1">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/spm.ico?v=7.1.1">
 
 
   <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
@@ -96,19 +96,19 @@
 
 
 
-  <meta name="description" content="脚手架工具：create-react-app状态管理集：Mobx问题：修饰符问题报错（根本原因是cra的维护者阻碍decorator发展，可能是出于规范化考虑） 对于Babel版本有限制以下分别是对应版本的解决办法 Babel6及以下1npm install --save-dev babel-plugin-transform-decorators-legacy package.json中添加bab">
+  <meta name="description" content="脚手架工具：create-react-app状态管理集：Mobx问题：修饰符问题报错（根本原因是cra的维护者阻碍decorator发展，可能是出于规范化考虑）">
 <meta name="keywords" content="前端,BUG">
 <meta property="og:type" content="article">
 <meta property="og:title" content="create-react-app中Mobx修饰符问题">
 <meta property="og:url" content="http://yoursite.com/2019/04/28/create-react-app中Mobx修饰符问题/index.html">
 <meta property="og:site_name" content="陈玄一">
-<meta property="og:description" content="脚手架工具：create-react-app状态管理集：Mobx问题：修饰符问题报错（根本原因是cra的维护者阻碍decorator发展，可能是出于规范化考虑） 对于Babel版本有限制以下分别是对应版本的解决办法 Babel6及以下1npm install --save-dev babel-plugin-transform-decorators-legacy package.json中添加bab">
+<meta property="og:description" content="脚手架工具：create-react-app状态管理集：Mobx问题：修饰符问题报错（根本原因是cra的维护者阻碍decorator发展，可能是出于规范化考虑）">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2019/04/28/create-react-app中Mobx修饰符问题/mobx_decorators.png">
-<meta property="og:updated_time" content="2019-04-28T09:23:02.545Z">
+<meta property="og:updated_time" content="2019-05-06T07:58:09.141Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="create-react-app中Mobx修饰符问题">
-<meta name="twitter:description" content="脚手架工具：create-react-app状态管理集：Mobx问题：修饰符问题报错（根本原因是cra的维护者阻碍decorator发展，可能是出于规范化考虑） 对于Babel版本有限制以下分别是对应版本的解决办法 Babel6及以下1npm install --save-dev babel-plugin-transform-decorators-legacy package.json中添加bab">
+<meta name="twitter:description" content="脚手架工具：create-react-app状态管理集：Mobx问题：修饰符问题报错（根本原因是cra的维护者阻碍decorator发展，可能是出于规范化考虑）">
 <meta name="twitter:image" content="http://yoursite.com/2019/04/28/create-react-app中Mobx修饰符问题/mobx_decorators.png">
 
 
@@ -254,7 +254,7 @@
 
     
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Schlagwörter</a>
+    <a href="/tags" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Schlagwörter</a>
 
   </li>
         
@@ -366,12 +366,24 @@
                 
               
 
-              <time title="Erstellt: 2019-04-28 16:51:52 / Geändert am: 17:23:02" itemprop="dateCreated datePublished" datetime="2019-04-28T16:51:52+08:00">2019-04-28</time>
+              <time title="Erstellt: 2019-04-28 16:51:52" itemprop="dateCreated datePublished" datetime="2019-04-28T16:51:52+08:00">2019-04-28</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Bearbeitet am</span>
+                
+                <time title="Geändert am: 2019-05-06 15:58:09" itemprop="dateModified" datetime="2019-05-06T15:58:09+08:00">2019-05-06</time>
               
             
           </span>
@@ -418,7 +430,7 @@
       
 
       
-        <p>脚手架工具：<strong>create-react-app</strong><br>状态管理集：<strong>Mobx</strong><br>问题：修饰符问题报错（根本原因是cra的维护者阻碍decorator发展，可能是出于规范化考虑）</p>
+        <p>脚手架工具：<strong>create-react-app</strong><br>状态管理集：<strong>Mobx</strong><br>问题：修饰符问题报错（根本原因是cra的维护者阻碍decorator发展，可能是出于规范化考虑）<br><a id="more"></a> </p>
 <p>对于<strong>Babel</strong>版本有限制<br>以下分别是对应版本的解决办法</p>
 <h4 id="Babel6及以下"><a href="#Babel6及以下" class="headerlink" title="Babel6及以下"></a><strong>Babel6及以下</strong></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev babel-plugin-transform-decorators-legacy</span><br></pre></td></tr></table></figure>
 <p>package.json中添加babel配置，当然如果你已经<strong>eject</strong>过了，也可以在webpack中配置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&quot;babel&quot;: &#123;</span><br><span class="line">    &quot;plugins&quot;: [</span><br><span class="line">      &quot;transform-decorators-legacy&quot;</span><br><span class="line">    ],</span><br><span class="line">    &quot;presets&quot;: [</span><br><span class="line">      &quot;react-app&quot;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
@@ -590,6 +602,21 @@
           
 
           
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/baymi" title="GitHub &rarr; https://github.com/baymi" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+            </div>
+          
 
           
 
@@ -636,7 +663,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; 2018 – <span itemprop="copyrightYear">2019</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
