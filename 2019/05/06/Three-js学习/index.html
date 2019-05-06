@@ -7,7 +7,7 @@
     
 
     <title>
-      2019，新的开始，元宵节记 | 陈玄一 
+      Three.js学习 | 陈玄一 
     </title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -16,20 +16,18 @@
     
     
 
-    <meta name="description" content="青玉案·元夕——辛弃疾东风夜放花千树。更吹落、星如雨。宝马雕车香满路。凤箫声动，玉壶光转，一夜鱼龙舞。蛾儿雪柳黄金缕。笑语盈盈暗香去。众里寻他千百度。蓦然回首，那人却在，灯火阑珊处。">
-<meta name="keywords" content="节日,测试">
+    <meta name="description" content="从事3D-GIS方向的工作快有两年了，期间手头有两个项目一直使用的是Cesium这一开源3D-GIS工具。对于非地信专业的来说，其实感觉这个结合GIS的前端开发也挺有意思的，所见即所得，信手之处创世纪。但也有几个痛点，比如对于大量源数据的处理，如何优化球上的流场和3D模型加载变化成了最头疼的问题。我想如果和WebGL应用的老大哥Three来做一些结合，是不是可以弥补Cesium原生的不足。 相关链">
+<meta name="keywords" content="前端,WebGL">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2019，新的开始，元宵节记 | 陈玄一">
-<meta property="og:url" content="http://yoursite.com/2019/02/19/2019，新的开始，元宵节记/index.html">
+<meta property="og:title" content="Three.js学习 | 陈玄一">
+<meta property="og:url" content="http://yoursite.com/2019/05/06/Three-js学习/index.html">
 <meta property="og:site_name" content="陈玄一">
-<meta property="og:description" content="青玉案·元夕——辛弃疾东风夜放花千树。更吹落、星如雨。宝马雕车香满路。凤箫声动，玉壶光转，一夜鱼龙舞。蛾儿雪柳黄金缕。笑语盈盈暗香去。众里寻他千百度。蓦然回首，那人却在，灯火阑珊处。">
+<meta property="og:description" content="从事3D-GIS方向的工作快有两年了，期间手头有两个项目一直使用的是Cesium这一开源3D-GIS工具。对于非地信专业的来说，其实感觉这个结合GIS的前端开发也挺有意思的，所见即所得，信手之处创世纪。但也有几个痛点，比如对于大量源数据的处理，如何优化球上的流场和3D模型加载变化成了最头疼的问题。我想如果和WebGL应用的老大哥Three来做一些结合，是不是可以弥补Cesium原生的不足。 相关链">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/2019/02/19/2019，新的开始，元宵节记/xy-l.jpg">
-<meta property="og:updated_time" content="2019-04-16T02:53:51.223Z">
+<meta property="og:updated_time" content="2019-05-06T03:16:26.823Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2019，新的开始，元宵节记 | 陈玄一">
-<meta name="twitter:description" content="青玉案·元夕——辛弃疾东风夜放花千树。更吹落、星如雨。宝马雕车香满路。凤箫声动，玉壶光转，一夜鱼龙舞。蛾儿雪柳黄金缕。笑语盈盈暗香去。众里寻他千百度。蓦然回首，那人却在，灯火阑珊处。">
-<meta name="twitter:image" content="http://yoursite.com/2019/02/19/2019，新的开始，元宵节记/xy-l.jpg">
+<meta name="twitter:title" content="Three.js学习 | 陈玄一">
+<meta name="twitter:description" content="从事3D-GIS方向的工作快有两年了，期间手头有两个项目一直使用的是Cesium这一开源3D-GIS工具。对于非地信专业的来说，其实感觉这个结合GIS的前端开发也挺有意思的，所见即所得，信手之处创世纪。但也有几个痛点，比如对于大量源数据的处理，如何优化球上的流场和3D模型加载变化成了最头疼的问题。我想如果和WebGL应用的老大哥Three来做一些结合，是不是可以弥补Cesium原生的不足。 相关链">
     
     
     
@@ -158,12 +156,12 @@ classes that you can use:
 
   <header class="post-header">
     
-    <h1 class="post-title">2019，新的开始，元宵节记</h1>
+    <h1 class="post-title">Three.js学习</h1>
 
     
 
     <div class="post-meta">
-      <time datetime="2019-02-19" class="post-meta__date date">2019-02-19</time> 
+      <time datetime="2019-05-06" class="post-meta__date date">2019-05-06</time> 
 
       <span class="post-meta__tags tags">
 
@@ -172,7 +170,7 @@ classes that you can use:
           
              &#8226; 标签:
             <font class="tags">
-              <a class="tags-link" href="/tags/测试/">测试</a>, <a class="tags-link" href="/tags/节日/">节日</a>
+              <a class="tags-link" href="/tags/WebGL/">WebGL</a>, <a class="tags-link" href="/tags/前端/">前端</a>
             </font>
           
 
@@ -184,8 +182,8 @@ classes that you can use:
   </header>
 
   <section id="post-content" class="article-content post">
-    <img src="/2019/02/19/2019，新的开始，元宵节记/xy-l.jpg" title="上元花灯">
-<p><strong>青玉案·元夕——辛弃疾</strong><br>东风夜放花千树。更吹落、星如雨。<br>宝马雕车香满路。凤箫声动，玉壶光转，一夜鱼龙舞。<br>蛾儿雪柳黄金缕。笑语盈盈暗香去。<br>众里寻他千百度。蓦然回首，那人却在，灯火阑珊处。</p>
+    <p>从事3D-GIS方向的工作快有两年了，期间手头有两个项目一直使用的是Cesium这一开源3D-GIS工具。<br>对于非地信专业的来说，其实感觉这个结合GIS的前端开发也挺有意思的，所见即所得，信手之处创世纪。<br>但也有几个痛点，比如对于大量源数据的处理，如何优化球上的流场和3D模型加载变化成了最头疼的问题。<br>我想如果和WebGL应用的老大哥Three来做一些结合，是不是可以弥补Cesium原生的不足。</p>
+<p>相关链接：<a href="https://cesiumjs.org/" target="_blank" rel="noopener">Cesium</a>、<a href="https://threejs.org/" target="_blank" rel="noopener">Three</a></p>
 
   </section>
 
