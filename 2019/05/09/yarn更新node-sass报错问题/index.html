@@ -461,8 +461,8 @@
       
         <h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>npm和yarn混用之后，更新node_modules之后出现包版本报错以及yarn进度停止的问题<br><img src="/2019/05/09/yarn更新node-sass报错问题/yarn-building.png" title="yarn卡进度"><br><a id="more"></a> </p>
 <h3 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h3><p>最初觉得是yarn版本或者npm版本冲突，更新至最新之后问题仍然存在，后排查得出结论是国外镜像原因</p>
-<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>与修改npm镜像方法一致，修改为国内淘宝镜像<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn config set registry https://registry.npm.taobao.org -g</span><br></pre></td></tr></table></figure></p>
-<p>node-sass失败的原因基本也是网络超时的原因，配置如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn config set sass_binary_site http://cdn.npm.taobao.org/dist/node-sass -g</span><br></pre></td></tr></table></figure></p>
+<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>与修改npm镜像方法一致，修改为国内淘宝镜像<br><figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn config <span class="keyword">set</span> registry <span class="comment">https:</span>//<span class="comment">registry.npm.taobao.org -g</span></span><br></pre></td></tr></table></figure></p>
+<p>node-sass失败的原因基本也是网络超时的原因，配置如下<br><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn config set sass_binary_site http://cdn.npm.taobao.org/dist/<span class="keyword">node</span><span class="title">-sass</span> -g</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -725,7 +725,7 @@
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">7 分钟</span>
+    <span title="站点阅读时长">6 分钟</span>
   
 </div>
 
