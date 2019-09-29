@@ -477,7 +477,7 @@
 <p>下面这段代码会报错，原因是ts提供了静态的代码分析，可以分析代码结构和提供的类型注解。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">greeter</span>(<span class="params">person: string</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"Hello, "</span> + person;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> user = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>];</span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.body.innerHTML = greeter(user);</span><br></pre></td></tr></table></figure></p>
 <h4 id="接口"><a href="#接口" class="headerlink" title="接口"></a><strong>接口</strong></h4><p>这里的接口，我的理解是结合上面类型注解看，只要在接口中声明的类型符合，这个对象就可以被接收。</p>
 <h4 id="类"><a href="#类" class="headerlink" title="类"></a><strong>类</strong></h4><p>类结合接口，常规操作，注意点在于可以在类的构造里面用public声明变量<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line">    fullName: string;</span><br><span class="line">    <span class="keyword">constructor</span>(public firstName, public middleInitial, public lastName) &#123;</span><br><span class="line">        <span class="keyword">this</span>.fullName = firstName + <span class="string">" "</span> + middleInitial + <span class="string">" "</span> + lastName;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">interface Person &#123;</span><br><span class="line">    firstName: string;</span><br><span class="line">    lastName: string;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">greeter</span>(<span class="params">person : Person</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"Hello, "</span> + person.firstName + <span class="string">" "</span> + person.lastName;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> user = <span class="keyword">new</span> Student(<span class="string">"Jane"</span>, <span class="string">"M."</span>, <span class="string">"User"</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.body.innerHTML = greeter(user);</span><br></pre></td></tr></table></figure></p>
-<h4 id="关于在React中的使用"><a href="#关于在React中的使用" class="headerlink" title="关于在React中的使用"></a><strong>关于在React中的使用</strong></h4><p>用React的组件结构+ts的例子<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> React <span class="keyword">from</span> <span class="string">"react"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> interface HelloProps &#123; <span class="attr">compiler</span>: string; framework: string; &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 'HelloProps' describes the shape of props.</span></span><br><span class="line"><span class="comment">// State is never set so we use the '&#123;&#125;' type.</span></span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">Hello</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span>&lt;<span class="title">HelloProps</span>, </span>&#123;&#125;&gt; &#123;</span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">return</span> &lt;h1&gt;Hello from &#123;this.props.compiler&#125; and &#123;this.props.framework&#125;!&lt;/h1&gt;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="关于在React中的使用"><a href="#关于在React中的使用" class="headerlink" title="关于在React中的使用"></a><strong>关于在React中的使用</strong></h4><p>用React的组件结构+ts的例子<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> React <span class="keyword">from</span> <span class="string">"react"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> interface HelloProps &#123; <span class="attr">compiler</span>: string; framework: string; &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 'HelloProps' describes the shape of props.</span></span><br><span class="line"><span class="comment">// State is never set so we use the '&#123;&#125;' type.</span></span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">Hello</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span>&lt;<span class="title">HelloProps</span>, </span>&#123;&#125;&gt; &#123;</span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello from &#123;this.props.compiler&#125; and &#123;this.props.framework&#125;!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <div class="note info">
             <p>未完待续… </p>
           </div>
@@ -605,7 +605,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-count">11</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -642,7 +642,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">9</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">11</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -737,7 +741,7 @@
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">5k</span>
+    <span title="站点总字数">7k</span>
   
 
   
@@ -748,7 +752,7 @@
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">8 分钟</span>
+    <span title="站点阅读时长">12 分钟</span>
   
 </div>
 
