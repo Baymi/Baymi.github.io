@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://baymi.github.io/"/>
-  <updated>2019-10-18T09:33:57.729Z</updated>
+  <updated>2019-12-04T06:35:02.768Z</updated>
   <id>https://baymi.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>redux中间件的学习和理解</title>
+    <link href="https://baymi.github.io/2019/12/04/redux%E4%B8%AD%E9%97%B4%E4%BB%B6%E7%9A%84%E5%AD%A6%E4%B9%A0%E5%92%8C%E7%90%86%E8%A7%A3/"/>
+    <id>https://baymi.github.io/2019/12/04/redux中间件的学习和理解/</id>
+    <published>2019-12-04T01:35:51.000Z</published>
+    <updated>2019-12-04T06:35:02.768Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>总结一下上个月月底结束的项目的开发工作，该项目是基于3D数字地理信息的资源信息监控系统，主要技术栈使用的是cesium+react全家桶（react/react-router/redux）。<br>但我在使用Redux工程中遇到几个思考，因为以前玩过MobX，使用前看网上各路大神的讨论声音大抵都是：Redux和React的生态契合比较好，而且设计哲学更符合React的发展路线。MobX则是易上手，但是有一种方案是使用修饰符会让代码不够优雅（其实我觉得修饰符挺好用的~）。那此处不讨论两者孰优孰劣，只是总结下我使用Redux的心得和体会。</p><h3 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h3><p>对Redux有所了解的同学都知道，里面有两个重要的角色分别为Action和Reducer，分别对应触发动作和解决方法。即通过UI交互的操作Onclick等去触发Action，然后由Action的type告诉Reducer该做什么。如下图所示：</p><div class="flow-center-container"><p><div id="flowchart-0" class="flow-chart"></div><br></p></div><br><a id="more"></a><br>而在构建store集合的时候，我们会引入一个【中间件】的概念。因为js单线程的特性，当需要执行异步操作时往往对于组件状态渲染具有副作用，于是乎我们需要在上述过程中优先处理副作用函数，然后生成原始的js对象，这个操作在Action响应之后，Reducer之前。<p></p><div class="flow-center-container"><p><div id="flowchart-1" class="flow-chart"></div><br></p></div><p></p><h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>【中间件】的作用是转换异步操作，生成原始的Action，让Reducer函数能够处理相应的Action，从而改变state，更新UI</p><h3 id="源码分析"><a href="#源码分析" class="headerlink" title="源码分析"></a>源码分析</h3><p>项目所使用的还是全家桶规范中推荐的【redux-thunk】,源码如下：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createThunkMiddleware</span>(<span class="params">extraArgument</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="function">(<span class="params">&#123; dispatch, getState &#125;</span>) =&gt;</span> next =&gt; <span class="function"><span class="params">action</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> action === <span class="string">'function'</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> action(dispatch, getState, extraArgument);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> next(action);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> thunk = createThunkMiddleware();</span><br><span class="line">thunk.withExtraArgument = createThunkMiddleware;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> thunk;</span><br></pre></td></tr></table></figure></p><p>thunk的做法仅仅是判断一下action类型，如果为函数即调用，而函数内部的副作用其并未考虑太多，也就会导致我们必须对函数体的写法要求比较高，这是我开发中遇到的一个痛点。往往只是为了dispatch一个方法去套一个壳子，让代码结构稍显臃肿。<br>而现在网上主流推荐使用【redux-saga】,这方面后续我的学习结果会更新至此。</p><p>看到一篇别人写的博文，受益很多：<a href="https://www.codercto.com/a/24273.html" target="_blank" rel="noopener">redux-thunk与redux-saga中间件详解</a></p><p><script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script><textarea id="flowchart-0-code" style="display: none">s=>start: UI操作op0=>operation: dispatch-分发op1=>operation: Action-触发op2=>operation: Reducer-处理e=>end: 渲染states(bottom)->op0(right)->op1(right)->op2->e</textarea><textarea id="flowchart-0-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-0-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-0-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-0", options);</script><textarea id="flowchart-1-code" style="display: none">s=>start: UI操作op0=>operation: dispatch-分发op10=>operation: Action-副作用op11=>operation: Middleware-中间件op12=>operation: Action-生成对象op2=>operation: Reducer-处理e=>end: 渲染states(bottom)->op0(right)->op10(right)->op11(right)->op12(right)->op2->e</textarea><textarea id="flowchart-1-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-1-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-1-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-1", options);</script></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;总结一下上个月月底结束的项目的开发工作，该项目是基于3D数字地理信息的资源信息监控系统，主要技术栈使用的是cesium+react全家桶（react/react-router/redux）。&lt;br&gt;但我在使用Redux工程中遇到几个思考，因为以前玩过MobX，使用前看网上各路大神的讨论声音大抵都是：Redux和React的生态契合比较好，而且设计哲学更符合React的发展路线。MobX则是易上手，但是有一种方案是使用修饰符会让代码不够优雅（其实我觉得修饰符挺好用的~）。那此处不讨论两者孰优孰劣，只是总结下我使用Redux的心得和体会。&lt;/p&gt;
+&lt;h3 id=&quot;思考&quot;&gt;&lt;a href=&quot;#思考&quot; class=&quot;headerlink&quot; title=&quot;思考&quot;&gt;&lt;/a&gt;思考&lt;/h3&gt;&lt;p&gt;对Redux有所了解的同学都知道，里面有两个重要的角色分别为Action和Reducer，分别对应触发动作和解决方法。即通过UI交互的操作Onclick等去触发Action，然后由Action的type告诉Reducer该做什么。如下图所示：&lt;/p&gt;
+&lt;div class=&quot;flow-center-container&quot;&gt;
+
+&lt;p&gt;&lt;div id=&quot;flowchart-0&quot; class=&quot;flow-chart&quot;&gt;&lt;/div&gt;&lt;br&gt;&lt;/p&gt;&lt;/div&gt;&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="React" scheme="https://baymi.github.io/tags/React/"/>
+    
+  </entry>
   
   <entry>
     <title>Windows下Webstrom配置CssComb工具</title>
